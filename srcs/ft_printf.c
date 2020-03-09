@@ -47,7 +47,7 @@ int		la_poste(t_flag *f, va_list ap)
 		v.count = print_hex(f, ap);
 	if (f->specifier == 'p')
 		v.count = print_pointer(f, ap);
-	else if (v.count == 0 && ((v.i = poste_error(f)) == -1))
+	else if (v.count == 0 && ((v.i = poste_error(f)) == -1) && f->specifier != '/')
 		v.count = print_char(f, ap);
 	return (v.count);
 }
